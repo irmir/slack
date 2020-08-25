@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slack</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="assets/css/normalize.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="offscreen">Slack chat</h1>
+        <div class="history">
+            <button class="btn-history" data-hint="History">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="search">
+            <button class="btn-search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <span>Search Ais</span>
+            </button>
+        </div>
+        <div class="help" title="Help">
+            <button class="btn-help" data-hint="Help">
+                <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+            </button>
+        </div>
+    </header>
+    <div class="body">
+        <aside class="aside">
+            <div class="aside-top">
+                <div class="user-name">
+                    <ul>
+                        <li class="ais">Ais<i class="fa fa-angle-down" aria-hidden="true"></i></li>
+                        <li class="mark-online">Irina Soupel-Hatalskaya</li>
+                    </ul>
+                </div>
+                <button class="btn-new-message" data-hint="New messages">
+                    <svg height="16px" viewBox="0 0 20 20" class="p-channel_sidebar__compose_button_svg_icon">
+                        <path d="M8.66000142,13.3899994 L10.3700017,12.6999993 C10.8700018,12.4999993 11.3300019,12.1999992 11.7100019,11.8199992 L19.5600032,3.96999786 C20.1900033,3.33999776 20.0600033,2.19999757 19.2800032,1.41999745 L18.570003,0.70999733 C17.7900029,-0.070002798 16.6500027,-0.190002818 16.0300026,0.429997284 L8.22000135,8.23999856 C7.81000128,8.64999863 7.49000123,9.13999871 7.29000119,9.6899988 L6.65000109,11.4199991 C6.120001,12.7599993 7.29000119,13.9099995 8.66000142,13.3899994 Z M14.4200024,18.9999974 C16.8700028,18.9999974 19.0000002,16.96 19.0000002,14.4199996 L19.0000002,8.49999738 C19.0000002,7.34999842 17.5000002,7.34999842 17.5000002,8.49999738 L17.5000002,14.1199995 C17.5000002,16.1099999 16.1100026,17.4999974 14.1200023,17.4999974 L5.88000096,17.4999974 C3.89000064,17.4999974 2.50000016,16.1099999 2.50000016,14.1199995 L2.50000016,5.87999818 C2.50000016,3.88999785 3.89000064,2.49999738 5.88000096,2.49999738 L11.5000002,2.49999738 C12.6900021,2.49999738 12.6800021,0.999997377 11.5000002,0.999997377 L5.58000091,0.999997377 C3.0300005,0.999997377 1.00000016,3.03999771 1.00000016,5.57999813 L1.00000016,14.4199996 C1.00000016,16.96 3.0300005,18.9999974 5.58000091,18.9999974 L14.4200024,18.9999974 Z M17.2100028,4.1899979 L15.8000026,2.76999767 L16.9500028,1.61999748 C17.0600028,1.50999746 17.3300028,1.54999747 17.5200029,1.7499975 L18.230003,2.45999762 C18.430003,2.65999765 18.470003,2.92999769 18.370003,3.01999771 L17.2100028,4.1899979 Z M7.98000131,12.0499992 L8.67000142,10.1099989 C8.75000143,9.88999883 8.86000145,9.71999881 9.02000148,9.54999878 L14.7300024,3.83999784 L16.1400026,5.24999807 L10.4300017,10.989999 C10.2500017,11.159999 10.0900017,11.2599991 9.90000162,11.3299991 L8.00000131,12.0699992 C7.98000131,12.0799992 7.97000131,12.0699992 7.98000131,12.0499992 Z" id="compose-dm" fill-rule="nonzero"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav>
+                <div class="nav-info">
+                    <ul>
+                        <li><i class="fa fa-comment-o" aria-hidden="true"></i>Threads</li>
+                        <li><i class="fa fa-at" aria-hidden="true"></i>Mentions & reactions</li>
+                        <li><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Drafts</li>
+                        <li><i class="fa fa-address-book-o" aria-hidden="true"></i>People & user groups </li>
+                        <li><i class="fa fa-th" aria-hidden="true"></i>Apps</li>
+                        <li><i class="fa fa-database" aria-hidden="true"></i>File browser</li>
+                        <li><i class="fa fa-long-arrow-up" aria-hidden="true"></i>Show less</li>
+                    </ul>
+                </div>
+                <div class="nav-channels">
+                    <h4 class="name-list">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>Channels<button class="btn-name-list"><span class="plus"></span></button>
+                    </h4>
+                    <ul>
+                        <li><span>#</span>general</li>
+                        <li><span>#</span>questions</li>
+                        <li><span>#</span>random</li>
+                        <li><span>#</span>task1</li>
+                        <li><i class="fa fa-lock size10" aria-hidden="true"></i> task2</li>
+                        <li><i class="fa fa-plus size10" aria-hidden="true"></i> Add a channel</li>
+                    </ul>
+                </div>
+                <div class="nav-messages">
+                    <h4 class="name-list">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>Direct messages<button class="btn-name-list left55"><span class="plus"></span></button>
+                    </h4>
+                    <ul>
+                        <li><i class="fa fa-heart size10" aria-hidden="true"></i>Slackbot</li>
+                        <li class="mark-online">Ira S-H <span class="dull">(you)</span></li>
+                        <li class="mark-offline dull">Gleb</li>
+                        <li><i class="fa fa-plus size10" aria-hidden="true"></i>Invite people</li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        <section class="content">
+            <div class="content-head">
+                <div class="content-header">
+                    <div class="content-header-title"><span>#</span>random <button class="btn-star" data-hint="Star channel"><i class="fa fa-star-o" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="description">
+                        <p>Non-work banter and water cooler conversation</p>
+                        <span class="edit"><a href="#">Edit</a></span>
+                    </div>
+                </div>
+                <div class="content-header-details">
+                    <ul class="group-members" data-hint="View all 635 users">
+                        <li><img src="assets/img/user1.jpg" alt="group-members"></li>
+                        <li><img src="assets/img/avatar-blue.png" alt="group-members"></li>
+                        <li><img src="assets/img/user4.jpg" alt="group-members"></li>
+                        <li>635</li>
+                    </ul>
+                    <button class="btn-add-user" data-hint="Add people to #random"><i class="fa fa-user-plus" aria-hidden="true"></i></button>
+                    <button class="btn-details" data-hint="Show channel details"><i class="fa fa-info-circle" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div class="content-body">
+                <div class="day">
+                    <div class="day-head">
+                        <button>Saturday, June 27th<i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                    </div>
+                    <hr>
+                    <div class="messages">
+                        <div class="user-message">
+                            <a href="#" class="user-avatar">
+                                <img src="assets/img/user1.jpg" alt="user name">
+                            </a>
+                            <div class="user-content">
+                                <div class="user-name">
+                                    <a href="#">Dzianis Shupenka</a><span data-hint="Jun 27th at 8:51:58 AM">8:51 AM</span>
+                                </div>
+                                <div class="user-text">
+                                    Как я понял выполняешь задание, его проверяют, и если ты выполнил правильно, тебя допускают к следующему заданию. В этом и заключается отбор?
+                                </div>
+                                <div class="replies-border">
+                                    <div class="replies">
+                                        <div class="users-replay">
+                                            <img src="assets/img/avatar-red.png" alt="">
+                                        </div>
+                                        <a href="">1 replay</a>
+                                        <span class="time-ago">1 month ago</span><a href="#" class="view-thread">View thread</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button class="btn-smile-0" data-hint="Add reaction"><i class="fa fa-smile-o" aria-hidden="true"></i></button>
+                                <button class="btn-comment" data-hint="Reply to thread"><i class="fa fa-comment-o" aria-hidden="true"></i></button>
+                                <button class="btn-share" data-hint="Share message.."><i class="fa fa-share" aria-hidden="true"></i></button>
+                                <button class="btn-bookmark" data-hint="Save"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+                                <button class="btn-ellipsis" data-hint="More actions"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <div class="user-message">
+                            <a href="#" class="user-avatar">
+                                <img src="assets/img/avatar-gray.png" alt="user name">
+                            </a>
+                            <div class="user-content">
+                                <div class="user-name">
+                                    <a href="#">Dmitry Gaiduk</a><span data-hint="Jun 27th at 6:35:58 PM">6:35 PM</span>
+                                </div>
+                                <div class="user-text">
+                                    кто сохранял гитхаб страницу? Ответ плиз в трид
+                                </div>
+                                <div class="replies-border">
+                                    <div class="replies">
+                                        <div class="users-replay">
+                                            <img src="assets/img/user1.jpg" alt="user">
+                                            <img src="assets/img/avatar-gray.png" alt="user">
+                                            <img src="assets/img/user2.jpg" alt="user">
+                                        </div>
+                                        <a href="">7 replay</a>
+                                        <span class="time-ago">Last reply 2 months ago</span><a href="#" class="view-thread">View thread</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button class="btn-smile-0" data-hint="Add reaction"><i class="fa fa-smile-o" aria-hidden="true"></i></button>
+                                <button class="btn-comment" data-hint="Reply to thread"><i class="fa fa-comment-o" aria-hidden="true"></i></button>
+                                <button class="btn-share" data-hint="Share message.."><i class="fa fa-share" aria-hidden="true"></i></button>
+                                <button class="btn-bookmark" data-hint="Save"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+                                <button class="btn-ellipsis" data-hint="More actions"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <div class="user-message">
+                            <a href="#" class="user-avatar">
+                                <img src="assets/img/avatar-orange.png" alt="user name">
+                            </a>
+                            <div class="user-content">
+                                <div class="user-name">
+                                    <a href="#">Alexey.Fedko</a><span data-hint="Jun 27th at 8:51:03 PM">8:51 PM</span>
+                                </div>
+                                <div class="user-text">
+                                    Guys, where do I see, how many points I got ?
+                                </div>
+                                <div class="replies-border">
+                                    <div class="replies">
+                                        <div class="users-replay">
+                                            <img src="assets/img/user3.jpg" alt="user">
+                                            <img src="assets/img/avatar-blue.png" alt="user">
+                                        </div>
+                                        <a href="">2 replay</a>
+                                        <span class="time-ago">Last reply 2 months ago</span><a href="#" class="view-thread">View thread</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button class="btn-smile-0" data-hint="Add reaction"><i class="fa fa-smile-o" aria-hidden="true"></i></button>
+                                <button class="btn-comment" data-hint="Reply to thread"><i class="fa fa-comment-o" aria-hidden="true"></i></button>
+                                <button class="btn-share" data-hint="Share message.."><i class="fa fa-share" aria-hidden="true"></i></button>
+                                <button class="btn-bookmark" data-hint="Save"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+                                <button class="btn-ellipsis" data-hint="More actions"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day">
+                    <div class="day-head">
+                        <button>Saturday, June 28th<i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                    </div>
+                    <hr>
+                    <div class="messages">
+                        <div class="user-message">
+                            <a href="#" class="user-avatar">
+                                <img src="assets/img/user1.jpg" alt="user name">
+                            </a>
+                            <div class="user-content">
+                                <div class="user-name">
+                                    <a href="#">Dzianis Shupenka</a><span data-hint="Jun 28th at 8:51:58 AM">8:51 AM</span>
+                                </div>
+                                <div class="user-text">
+                                    Как я понял выполняешь задание, его проверяют, и если ты выполнил правильно, тебя допускают к следующему заданию. В этом и заключается отбор?
+                                </div>
+                                <div class="replies-border">
+                                    <div class="replies">
+                                        <div class="users-replay">
+                                            <img src="assets/img/avatar-red.png" alt="">
+                                        </div>
+                                        <a href="">1 replay</a>
+                                        <span class="time-ago">1 month ago</span><a href="#" class="view-thread">View thread</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button class="btn-smile-0" data-hint="Add reaction"><i class="fa fa-smile-o" aria-hidden="true"></i></button>
+                                <button class="btn-comment" data-hint="Reply to thread"><i class="fa fa-comment-o" aria-hidden="true"></i></button>
+                                <button class="btn-share" data-hint="Share message.."><i class="fa fa-share" aria-hidden="true"></i></button>
+                                <button class="btn-bookmark" data-hint="Save"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+                                <button class="btn-ellipsis" data-hint="More actions"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <div class="user-message">
+                            <a href="#" class="user-avatar">
+                                <img src="assets/img/avatar-gray.png" alt="user name">
+                            </a>
+                            <div class="user-content">
+                                <div class="user-name">
+                                    <a href="#">Dmitry Gaiduk</a><span data-hint="Jun 28th at 6:35:58 PM">6:35 PM</span>
+                                </div>
+                                <div class="user-text">
+                                    кто сохранял гитхаб страницу? Ответ плиз в трид
+                                </div>
+                                <div class="replies-border">
+                                    <div class="replies">
+                                        <div class="users-replay">
+                                            <img src="assets/img/user1.jpg" alt="user">
+                                            <img src="assets/img/avatar-gray.png" alt="user">
+                                            <img src="assets/img/user2.jpg" alt="user">
+                                        </div>
+                                        <a href="">7 replay</a>
+                                        <span class="time-ago">Last reply 2 months ago</span><a href="#" class="view-thread">View thread</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button class="btn-smile-0" data-hint="Add reaction"><i class="fa fa-smile-o" aria-hidden="true"></i></button>
+                                <button class="btn-comment" data-hint="Reply to thread"><i class="fa fa-comment-o" aria-hidden="true"></i></button>
+                                <button class="btn-share" data-hint="Share message.."><i class="fa fa-share" aria-hidden="true"></i></button>
+                                <button class="btn-bookmark" data-hint="Save"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+                                <button class="btn-ellipsis" data-hint="More actions"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <div class="user-message">
+                            <a href="#" class="user-avatar">
+                                <img src="assets/img/avatar-orange.png" alt="user name">
+                            </a>
+                            <div class="user-content">
+                                <div class="user-name">
+                                    <a href="#">Alexey.Fedko</a><span data-hint="Jun 28th at 8:51:03 PM">8:51 PM</span>
+                                </div>
+                                <div class="user-text">
+                                    Guys, where do I see, how many points I got ?
+                                </div>
+                                <div class="replies-border">
+                                    <div class="replies">
+                                        <div class="users-replay">
+                                            <img src="assets/img/user3.jpg" alt="user">
+                                            <img src="assets/img/avatar-blue.png" alt="user">
+                                        </div>
+                                        <a href="">2 replay</a>
+                                        <span class="time-ago">Last reply 2 months ago</span><a href="#" class="view-thread">View thread</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button class="btn-smile-0" data-hint="Add reaction"><i class="fa fa-smile-o" aria-hidden="true"></i></button>
+                                <button class="btn-comment" data-hint="Reply to thread"><i class="fa fa-comment-o" aria-hidden="true"></i></button>
+                                <button class="btn-share" data-hint="Share message.."><i class="fa fa-share" aria-hidden="true"></i></button>
+                                <button class="btn-bookmark" data-hint="Save"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+                                <button class="btn-ellipsis" data-hint="More actions"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="day">
+                    <div class="day-head">
+                        <button>Saturday, June 29th<i class="fa fa-angle-down" aria-hidden="true"></i></button>
+                    </div>
+                    <hr>
+                    <div class="messages">
+                        <div class="user-message">
+                            <a href="#" class="user-avatar">
+                                <img src="assets/img/user1.jpg" alt="user name">
+                            </a>
+                            <div class="user-content">
+                                <div class="user-name">
+                                    <a href="#">Dzianis Shupenka</a><span data-hint="Jun 29th at 8:51:58 AM">8:51 AM</span>
+                                </div>
+                                <div class="user-text">
+                                    Как я понял выполняешь задание, его проверяют, и если ты выполнил правильно, тебя допускают к следующему заданию. В этом и заключается отбор?
+                                </div>
+                                <div class="replies-border">
+                                    <div class="replies">
+                                        <div class="users-replay">
+                                            <img src="assets/img/avatar-red.png" alt="">
+                                        </div>
+                                        <a href="">1 replay</a>
+                                        <span class="time-ago">1 month ago</span><a href="#" class="view-thread">View thread</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button class="btn-smile-0" data-hint="Add reaction"><i class="fa fa-smile-o" aria-hidden="true"></i></button>
+                                <button class="btn-comment" data-hint="Reply to thread"><i class="fa fa-comment-o" aria-hidden="true"></i></button>
+                                <button class="btn-share" data-hint="Share message.."><i class="fa fa-share" aria-hidden="true"></i></button>
+                                <button class="btn-bookmark" data-hint="Save"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+                                <button class="btn-ellipsis" data-hint="More actions"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <div class="user-message">
+                            <a href="#" class="user-avatar">
+                                <img src="assets/img/avatar-gray.png" alt="user name">
+                            </a>
+                            <div class="user-content">
+                                <div class="user-name">
+                                    <a href="#">Dmitry Gaiduk</a><span data-hint="Jun 29th at 6:35:58 PM">6:35 PM</span>
+                                </div>
+                                <div class="user-text">
+                                    кто сохранял гитхаб страницу? Ответ плиз в трид
+                                </div>
+                                <div class="replies-border">
+                                    <div class="replies">
+                                        <div class="users-replay">
+                                            <img src="assets/img/user1.jpg" alt="user">
+                                            <img src="assets/img/avatar-gray.png" alt="user">
+                                            <img src="assets/img/user2.jpg" alt="user">
+                                        </div>
+                                        <a href="">7 replay</a>
+                                        <span class="time-ago">Last reply 2 months ago</span><a href="#" class="view-thread">View thread</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button class="btn-smile-0" data-hint="Add reaction"><i class="fa fa-smile-o" aria-hidden="true"></i></button>
+                                <button class="btn-comment" data-hint="Reply to thread"><i class="fa fa-comment-o" aria-hidden="true"></i></button>
+                                <button class="btn-share" data-hint="Share message.."><i class="fa fa-share" aria-hidden="true"></i></button>
+                                <button class="btn-bookmark" data-hint="Save"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+                                <button class="btn-ellipsis" data-hint="More actions"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <div class="user-message">
+                            <a href="#" class="user-avatar">
+                                <img src="assets/img/avatar-orange.png" alt="user name">
+                            </a>
+                            <div class="user-content">
+                                <div class="user-name">
+                                    <a href="#">Alexey.Fedko</a><span data-hint="Jun 27th at 8:51:03 PM">8:51 PM</span>
+                                </div>
+                                <div class="user-text">
+                                    Guys, where do I see, how many points I got ?
+                                </div>
+                                <div class="replies-border">
+                                    <div class="replies">
+                                        <div class="users-replay">
+                                            <img src="assets/img/user3.jpg" alt="user">
+                                            <img src="assets/img/avatar-blue.png" alt="user">
+                                        </div>
+                                        <a href="">2 replay</a>
+                                        <span class="time-ago">Last reply 2 months ago</span><a href="#" class="view-thread">View thread</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button class="btn-smile-0" data-hint="Add reaction"><i class="fa fa-smile-o" aria-hidden="true"></i></button>
+                                <button class="btn-comment" data-hint="Reply to thread"><i class="fa fa-comment-o" aria-hidden="true"></i></button>
+                                <button class="btn-share" data-hint="Share message.."><i class="fa fa-share" aria-hidden="true"></i></button>
+                                <button class="btn-bookmark" data-hint="Save"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+                                <button class="btn-ellipsis" data-hint="More actions"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <div class="user-message">
+                            <a href="#" class="user-avatar">
+                                <img src="assets/img/user4.jpg" alt="user name">
+                            </a>
+                            <div class="user-content">
+                                <div class="user-name">
+                                    <a href="#">Stanislav Skuratovich</a><span data-hint="Jun 29th at 11:34:04 PM">11:34 PM</span>
+                                </div>
+                                <div class="user-text">
+                                    В режиме отладки в хроме показывает нормально, а на Айфоне всё сжимает дико
+                                </div>
+                                <div class="replies-border">
+                                    <div class="replies">
+                                        <div class="users-replay">
+                                            <img src="assets/img/avatar-red.png" alt="">
+                                        </div>
+                                        <a href="">1 replay</a>
+                                        <span class="time-ago">Last reply 2 months ago</span><a href="#" class="view-thread">View thread</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button class="btn-smile-0" data-hint="Add reaction"><i class="fa fa-smile-o" aria-hidden="true"></i></button>
+                                <button class="btn-comment" data-hint="Reply to thread"><i class="fa fa-comment-o" aria-hidden="true"></i></button>
+                                <button class="btn-share" data-hint="Share message.."><i class="fa fa-share" aria-hidden="true"></i></button>
+                                <button class="btn-bookmark" data-hint="Save"><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+                                <button class="btn-ellipsis" data-hint="More actions"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-footer">
+                <div class="user-form">
+                    <input type="text" name="text-message" placeholder="Message #random">
+                    <div class="edit-text">
+                        <div class="left-block">
+                            <button class="border btn-shortcuts" data-hint="Shortcuts"><i class="fa fa-bolt" aria-hidden="true"></i></button>
+                            <button class="btn-bold" data-hint="Bold"><i class="fa fa-bold" aria-hidden="true"></i></button>
+                            <button class="btn-italic" data-hint="Italic"><i class="fa fa-italic" aria-hidden="true"></i></button>
+                            <button class="btn-strikethrough" data-hint="Strikethrough"><i class="fa fa-strikethrough" aria-hidden="true"></i></button>
+                            <button class="btn-code" data-hint="Code"><i class="fa fa-code" aria-hidden="true"></i></button>
+                            <button class="btn-link" data-hint="Link"><i class="fa fa-link" aria-hidden="true"></i></button>
+                            <button class="btn-o-list" data-hint="Ordered list"><i class="fa fa-list-ol" aria-hidden="true"></i></button>
+                            <button class="btn-b-list" data-hint="Bulleted list"><i class="fa fa-list" aria-hidden="true"></i></button>
+                            <button class="btn-more-options" data-hint="More options"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="right-block">
+                            <button class="btn-font" data-hint="Hide formatting"><i class="fa fa-font" aria-hidden="true"></i></button>
+                            <button class="btn-at" data-hint="Mention someone"><i class="fa fa-at" aria-hidden="true"></i></button>
+                            <button class="btn-smile" data-hint="Emoji"><i class="fa fa-smile-o" aria-hidden="true"></i></button>
+                            <button class="btn-paperclip" data-hint="Attach file"><i class="fa fa-paperclip" aria-hidden="true"></i></button>
+                            <button class="btn-send" data-hint="Send message"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
